@@ -1,0 +1,31 @@
+@font-face {
+  font-family: 'Fontawsome';
+  src: url('./fonts/fontawesome-webfont.eot') format('eot'),
+    url('./fonts/fontawesome-webfont.ttf') format('truetype'),
+    url('./fonts/fontawesome-webfont.woff') format('woff');
+  /* Add additional font formats if necessary */
+  /* Specify the correct path to the font files */
+}
+@font-face {
+  font-family: 'Glyphicons';
+  src: url('./fonts/glyphicons-halflings-regular.eot') format('eot'),
+    url('./fonts/glyphicons-halflings-regular.ttf') format('truetype'),
+    url('./fonts/glyphicons-halflings-regular.woff') format('woff');
+  /* Add additional font formats if necessary */
+  /* Specify the correct path to the font files */
+}
+
+* {
+  font-family: 'Fontawsome', sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+$dark-blue: #203864;
+$dark-blue-degrade: #2038649a;
+$white: #ffffff;
+$gold: #af9f7d;
+$grey-text: #777777;
+$grey-background: #e6e6e6;
+$text-black: #202020;
