@@ -1,0 +1,36 @@
+@import '../../App.scss';
+
+.platform_bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h2 {
+    font-size: 1.5em;
+    text-align: center;
+    border-bottom: $yellow 3px solid;
+    padding-bottom: 25px;
+    margin-bottom: 15px;
+    color: $grey-text;
+    font-weight: 400;
+    padding-top: 150px;
+  }
+  .screenshots {
+    padding-top: 75px;
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 50px;
+    .screenshot {
+      :hover {
+        border: $red 3px solid;
+        transition: all 1.4s;
+      }
+      img {
+        width: 247px;
+        height: 528px;
+        border: $grey-border 3px solid;
+      }
+    }
+  }
+}

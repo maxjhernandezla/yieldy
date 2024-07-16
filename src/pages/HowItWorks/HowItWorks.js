@@ -3,6 +3,9 @@ import './HowItWorks.scss'
 import recycle from '../../images/triangular-arrows-sign-for-recycle.png'
 import chart from '../../images/bar-chart.png'
 import cube from '../../images/3d-cube.png'
+import { faChartColumn } from '@fortawesome/free-solid-svg-icons'
+import { faRecycle } from '@fortawesome/free-solid-svg-icons'
+import { faCodepen } from '@fortawesome/free-brands-svg-icons'
 const HowItWorks = () =>
 {
     return (
@@ -15,7 +18,8 @@ const HowItWorks = () =>
                 <div className="how_bottom">
                     <div className="how_bottom_item">
                         <div className="icon">
-                            <img src={chart} alt="" />
+                            <FontAwesomeIcon icon={faChartColumn} />
+                            {/* <img src={chart} alt="" /> */}
                         </div>
                         <div className="text_container">
                             <h4>
@@ -25,7 +29,8 @@ const HowItWorks = () =>
                     </div>
                     <div className="how_bottom_item">
                         <div className="icon">
-                            <img src={cube} alt="" />
+                            <FontAwesomeIcon icon={faCodepen} />
+                            {/* <img src={cube} alt="" /> */}
                         </div>
                         <div className="text_container">
                             <h4>Predicciones con IA</h4>
@@ -34,7 +39,8 @@ const HowItWorks = () =>
                     </div>
                     <div className="how_bottom_item">
                         <div className="icon">
-                            <img src={recycle} alt="" />
+                            <FontAwesomeIcon icon={faRecycle} />
+                            {/* <svg src={recycle} alt="" /> */}
                         </div>
                         <div className="text_container">
                             <h4>Garantía</h4>

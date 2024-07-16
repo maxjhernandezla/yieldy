@@ -1,0 +1,68 @@
+@import '../../App.scss';
+
+.platform {
+  height: 80vh;
+  .platform_container {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: row;
+    .left {
+      width: 50%;
+      margin-left: 65px;
+      display: flex;
+      flex-direction: column;
+      h2 {
+        font-size: 30px;
+        font-weight: 100;
+        color: $grey-text;
+        margin-bottom: 30px;
+      }
+      .platform_item {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 25px;
+        .text_container {
+          margin-left: 10px;
+          width: 80%;
+          h4 {
+            color: $grey-text;
+            font-weight: 300;
+            margin-bottom: 10px;
+            font-size: 1.25em;
+            line-height: 1.4em;
+          }
+          p {
+            font-weight: 100;
+            padding: 0 0 1em;
+            line-height: 1.4em;
+            font-size: 16px;
+            color: $grey-text;
+          }
+        }
+        .icon {
+          width: 64px;
+          height: 64px;
+          border-radius: 50%;
+          border: $gold 1px solid;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          svg {
+            color: $gold;
+            width: 22px;
+            height: 23px;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+    .right {
+      width: 50%;
+      margin-left: 40px;
+      img {
+        width: 400px;
+        height: 600px;
+      }
+    }
+  }
+}
