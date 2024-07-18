@@ -6,6 +6,8 @@ import HowItWorks from "../pages/HowItWorks/HowItWorks"
 import Platform from "../pages/Platform/Platform"
 import Benefits from "../pages/Benefits/Benefits"
 import Contact from "../pages/Contact/Contact"
+import Suscribe from "../pages/Suscribe/Suscribe"
+import Footer from "../components/Footer/Footer"
 
 const AppRouter = () =>
 {
@@ -18,6 +20,8 @@ const AppRouter = () =>
             <Platform />
             <Benefits />
             <Contact />
+            <Suscribe />
+            <Footer />
         </BrowserRouter>
     )
 }
