@@ -1,28 +1,23 @@
-import { BrowserRouter } from "react-router-dom"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import LandingRouter from "./LandingRouter"
+import SimulatorRouter from "./SimulatorRouter"
 import Navbar from "../components/Navbar/Navbar"
-import Home from "../pages/Home/Home"
-import Project from "../pages/Project/Project"
-import HowItWorks from "../pages/HowItWorks/HowItWorks"
-import Platform from "../pages/Platform/Platform"
-import Benefits from "../pages/Benefits/Benefits"
-import Contact from "../pages/Contact/Contact"
-import Suscribe from "../pages/Suscribe/Suscribe"
 import Footer from "../components/Footer/Footer"
-
+import ResponsiveNavbar from "../components/ResponsiveNavbar/ResponsiveNavbar"
+import { ModalProvider } from '../context/ModalContext';
 const AppRouter = () =>
 {
     return (
-        <BrowserRouter>
-            <Navbar />
-            <Home />
-            <Project />
-            <HowItWorks />
-            <Platform />
-            <Benefits />
-            <Contact />
-            <Suscribe />
-            <Footer />
-        </BrowserRouter>
+        <ModalProvider>
+            <BrowserRouter>
+                <ResponsiveNavbar />
+                <Routes>
+                    <Route path='/' element={<LandingRouter />} />
+                    <Route path='/simulator' element={<SimulatorRouter />} />
+                </Routes>
+                <Footer />
+            </BrowserRouter>
+        </ModalProvider>
     )
 }
 

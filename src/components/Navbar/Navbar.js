@@ -1,7 +1,6 @@
-import React from 'react'
-import logo from '../../images/logo_horiz_wide_trns.png'
-import './Navbar.scss'
 
+import logo from '../../images/logo_horiz_wide_trns.png'
+import './Navbar.scss';
 const Navbar = () =>
 {
     return (
