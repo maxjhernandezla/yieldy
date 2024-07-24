@@ -7,8 +7,10 @@ import Header from '../components/Header/Header'
 
 const SimulatorRouter = () =>
 {
+    const title = 'Simule su campo'
     return (
         <div>
+            <Header title={title} />
             <Simulator />
         </div>
     )

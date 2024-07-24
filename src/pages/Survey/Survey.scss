@@ -1,16 +1,20 @@
 // @import '../../App.scss';
 
-// .simulator {
-//   .simulator_container {
+// .survey {
+//   .survey_container {
 //     display: flex;
 //     flex-direction: column;
 //     align-items: center;
-//     h4 {
+//     .text_container {
 //       margin-top: 50px;
-//       font-size: 30px;
-//       max-width: 750px;
-//       text-align: center;
-//       color: $grey-text;
+//       max-width: 500px;
+//       background-color: $gold;
+//       padding: 25px;
+//       color: $dark-blue;
+//       p {
+//         font-size: 18px;
+//         font-weight: 400;
+//       }
 //     }
 //     form {
 //       display: flex;
@@ -19,11 +23,13 @@
 //       gap: 15px;
 //       margin-top: 40px;
 //       margin-bottom: 40px;
+//       width: 100%;
+//       max-width: 500px;
 //       .form_item {
 //         display: flex;
 //         flex-direction: column;
 //         gap: 5px;
-//         width: 250px;
+//         width: 100%;
 //         .error {
 //           color: red;
 //           font-weight: 400;
@@ -33,7 +39,7 @@
 //           color: $grey-text;
 //           font-size: 16px;
 //         }
-//         input {
+//         textarea {
 //           padding: 10px;
 //           border-radius: 0;
 //           font-size: 16px;
@@ -92,27 +98,49 @@
 
 @import '../../App.scss';
 
-.simulator {
-  .simulator_container {
+.survey {
+  .survey_container {
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    h4 {
-      margin-top: 50px;
-      font-size: 30px;
-      max-width: 750px;
-      text-align: center;
-      color: $grey-text;
+    .subtitle {
+      padding: 20px;
+      p {
+        font-size: 16px;
+        font-weight: 300;
+        text-align: center;
+      }
+    }
+    .text_container {
+      margin: 50px 20px 0 20px;
+      max-width: 500px;
+      background-color: $gold;
+      padding: 25px;
+      color: $dark-blue;
 
       @media (max-width: 768px) {
-        font-size: 24px;
         margin-top: 30px;
+        padding: 20px;
+        max-width: 100%;
       }
 
       @media (max-width: 480px) {
-        font-size: 20px;
         margin-top: 20px;
+        padding: 15px;
+        max-width: 100%;
+      }
+
+      p {
+        font-size: 18px;
+        font-weight: 400;
+
+        @media (max-width: 768px) {
+          font-size: 16px;
+        }
+
+        @media (max-width: 480px) {
+          font-size: 14px;
+        }
       }
     }
 
@@ -123,7 +151,9 @@
       gap: 15px;
       margin-top: 40px;
       margin-bottom: 40px;
-
+      width: 100%;
+      max-width: 500px;
+      padding: 20px;
       @media (max-width: 768px) {
         gap: 10px;
         margin-top: 30px;
@@ -132,7 +162,7 @@
 
       @media (max-width: 480px) {
         gap: 5px;
-        margin-top: 20px;
+        margin: 20px;
         margin-bottom: 20px;
       }
 
@@ -140,16 +170,21 @@
         display: flex;
         flex-direction: column;
         gap: 5px;
-        width: 250px;
-
-        @media (max-width: 768px) {
-          width: 200px;
+        width: 100%;
+        input {
+          padding: 10px;
+          border-radius: 0;
+          font-size: 16px;
+          font-weight: 400;
+          border: 1px solid $grey-text;
+          color: $grey-text;
+          &:focus {
+            outline: none;
+            box-shadow: 0px 0px 3px -1px rgba(43, 43, 43, 0.75);
+            -webkit-box-shadow: 0px 0px 3px -1px rgba(43, 43, 43, 0.75);
+            -moz-box-shadow: 0px 0px 3px -1px rgba(43, 43, 43, 0.75);
+          }
         }
-
-        @media (max-width: 480px) {
-          width: 150px;
-        }
-
         .error {
           color: red;
           font-weight: 400;
@@ -177,7 +212,7 @@
           }
         }
 
-        input {
+        textarea {
           padding: 10px;
           border-radius: 0;
           font-size: 16px;

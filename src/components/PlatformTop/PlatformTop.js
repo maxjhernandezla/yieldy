@@ -8,7 +8,7 @@ import { faThumbsUp } from '@fortawesome/free-solid-svg-icons'
 const PlatformTop = () =>
 {
     return (
-        <div className='platform'>
+        <div className='platform_top'>
             <div className='platform_container'>
                 <div className="left">
                     <h2>La plataforma</h2>

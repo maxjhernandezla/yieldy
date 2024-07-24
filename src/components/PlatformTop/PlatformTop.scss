@@ -1,67 +1,199 @@
+// @import '../../App.scss';
+
+// .platform {
+//   height: 80vh;
+//   .platform_container {
+//     margin-top: 80px;
+//     display: flex;
+//     flex-direction: row;
+//     .left {
+//       width: 50%;
+//       margin-left: 65px;
+//       display: flex;
+//       flex-direction: column;
+//       h2 {
+//         font-size: 30px;
+//         font-weight: 100;
+//         color: $grey-text;
+//         margin-bottom: 30px;
+//       }
+//       .platform_item {
+//         display: flex;
+//         flex-direction: row;
+//         margin-bottom: 25px;
+//         .text_container {
+//           margin-left: 10px;
+//           width: 80%;
+//           h4 {
+//             color: $grey-text;
+//             font-weight: 300;
+//             margin-bottom: 10px;
+//             font-size: 1.25em;
+//             line-height: 1.4em;
+//           }
+//           p {
+//             font-weight: 100;
+//             padding: 0 0 1em;
+//             line-height: 1.4em;
+//             font-size: 16px;
+//             color: $grey-text;
+//           }
+//         }
+//         .icon {
+//           width: 64px;
+//           height: 64px;
+//           border-radius: 50%;
+//           border: $gold 1px solid;
+//           display: flex;
+//           justify-content: center;
+//           align-items: center;
+//           svg {
+//             color: $gold;
+//             width: 22px;
+//             height: 23px;
+//             font-weight: bold;
+//           }
+//         }
+//       }
+//     }
+//     .right {
+//       width: 50%;
+//       margin-left: 40px;
+//       img {
+//         width: 400px;
+//         height: 600px;
+//       }
+//     }
+//   }
+// }
+
 @import '../../App.scss';
 
-.platform {
-  height: 80vh;
+.platform_top {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
   .platform_container {
     margin-top: 80px;
     display: flex;
     flex-direction: row;
+    max-width: 1170px;
+    justify-content: center;
+
     .left {
-      width: 50%;
-      margin-left: 65px;
+      width: 50%; // Establece la anchura para pantallas medianas y grandes
+      padding-left: 50px; // Margen izquierdo para pantallas medianas y grandes
       display: flex;
       flex-direction: column;
+
       h2 {
-        font-size: 30px;
+        font-size: 28px; // Ajustado tamaño de fuente para pantallas más pequeñas
         font-weight: 100;
         color: $grey-text;
-        margin-bottom: 30px;
+        margin-bottom: 20px; // Ajustado margen en pantallas más pequeñas
+        margin-top: 20px;
       }
+
       .platform_item {
         display: flex;
         flex-direction: row;
-        margin-bottom: 25px;
+        align-items: flex-start; // Centra verticalmente los elementos
+        margin-bottom: 20px; // Ajustado margen en pantallas más pequeñas
+
         .text_container {
           margin-left: 10px;
-          width: 80%;
+          width: 70%; // Ocupa toda la anchura disponible
+
           h4 {
             color: $grey-text;
             font-weight: 300;
             margin-bottom: 10px;
-            font-size: 1.25em;
-            line-height: 1.4em;
+            font-size: 1.1em; // Ajustado tamaño de fuente para pantallas más pequeñas
+            line-height: 1.3em; // Ajustado line-height para mejorar la legibilidad
           }
+
           p {
             font-weight: 100;
-            padding: 0 0 1em;
+            padding: 0 0 16px 0;
             line-height: 1.4em;
-            font-size: 16px;
+            font-size: 16px; // Ajustado tamaño de fuente para pantallas más pequeñas
             color: $grey-text;
           }
         }
+
         .icon {
-          width: 64px;
-          height: 64px;
+          width: 50px; // Ajustado tamaño del ícono para pantallas más pequeñas
+          height: 50px;
           border-radius: 50%;
           border: $gold 1px solid;
           display: flex;
           justify-content: center;
           align-items: center;
+
           svg {
             color: $gold;
-            width: 22px;
-            height: 23px;
+            width: 18px; // Ajustado tamaño del SVG para pantallas más pequeñas
+            height: 19px;
             font-weight: bold;
           }
         }
       }
     }
+
     .right {
-      width: 50%;
-      margin-left: 40px;
+      width: 50%; // Establece la anchura para pantallas medianas y grandes
+      // margin-left: 40px; // Margen izquierdo para pantallas medianas y grandes
+      display: flex;
+      justify-content: center;
+
       img {
-        width: 400px;
-        height: 600px;
+        width: 100%; // Ajusta el tamaño de la imagen a la anchura del contenedor
+        height: auto; // Mantiene la relación de aspecto de la imagen
+        max-width: 400px; // Establece un ancho máximo para pantallas grandes
+        max-height: 600px; // Establece una altura máxima para pantallas grandes
+      }
+    }
+  }
+}
+
+// Media query para pantallas más grandes
+@media (max-width: 768px) {
+  .platform {
+    .platform_container {
+      flex-direction: column;
+      .right {
+        width: 100%;
+        .platform_item {
+          width: 100%;
+          .text_container {
+            width: 100%;
+          }
+        }
+      }
+      .left {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .platform {
+    .platform_container {
+      flex-direction: column;
+      .right {
+        width: 100%;
+        .platform_item {
+          width: 100%;
+          .text_container {
+            width: 100%;
+          }
+        }
+      }
+      .left {
+        padding-left: 25px;
       }
     }
   }

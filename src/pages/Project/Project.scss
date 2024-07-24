@@ -1,31 +1,95 @@
+// @import '../../App.scss';
+
+// .project {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   .project_container {
+//     display: flex;
+//     flex-direction: row;
+//     width: 1100px;
+//     margin-top: 50px;
+//     margin-bottom: 50px;
+//     .left {
+//       img {
+//         height: 555px;
+//         width: 555px;
+//       }
+//     }
+//     .right {
+//       display: flex;
+//       flex-direction: column;
+//       height: 555px;
+//       margin-top: 50px;
+//       h2 {
+//         color: $grey-text;
+//         font-weight: 100;
+//         font-size: 35px;
+//       }
+//       p {
+//         color: $grey-text;
+//         font-weight: 100;
+//         margin-top: 15px;
+//         font-size: 16px;
+//         line-height: 1.8;
+//         margin-bottom: 20px;
+//       }
+//       button {
+//         background-color: transparent;
+//         color: $gold;
+//         font-weight: 700;
+//         font-size: 17px;
+//         margin-right: 10px;
+//         line-height: 20px;
+//         padding: 15px 35px;
+//         height: 50px;
+//         width: 250px;
+//         border: 2px solid $gold;
+//         border-radius: 100px;
+//         cursor: pointer;
+//         &:hover {
+//           background-color: $gold;
+//           color: $white;
+//           transition: all 0.4s;
+//         }
+//       }
+//     }
+//   }
+// }
+
 @import '../../App.scss';
 
 .project {
   display: flex;
   align-items: center;
   justify-content: center;
+
   .project_container {
     display: flex;
     flex-direction: row;
     width: 1100px;
     margin-top: 50px;
     margin-bottom: 50px;
+
     .left {
       img {
         height: 555px;
         width: 555px;
       }
     }
+
     .right {
       display: flex;
       flex-direction: column;
       height: 555px;
       margin-top: 50px;
+
       h2 {
         color: $grey-text;
         font-weight: 100;
         font-size: 35px;
       }
+
       p {
         color: $grey-text;
         font-weight: 100;
@@ -34,6 +98,7 @@
         line-height: 1.8;
         margin-bottom: 20px;
       }
+
       button {
         background-color: transparent;
         color: $gold;
@@ -47,10 +112,105 @@
         border: 2px solid $gold;
         border-radius: 100px;
         cursor: pointer;
+
         &:hover {
           background-color: $gold;
           color: $white;
           transition: all 0.4s;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .project_container {
+      width: 90%;
+      margin-top: 40px;
+      margin-bottom: 40px;
+
+      .left {
+        img {
+          height: 450px;
+          width: 450px;
+        }
+      }
+
+      .right {
+        h2 {
+          font-size: 30px;
+        }
+
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .project_container {
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      padding: 0 25px;
+
+      .left {
+        img {
+          height: 350px;
+          width: 350px;
+        }
+      }
+
+      .right {
+        height: auto;
+        margin-top: 20px;
+        align-items: center;
+        text-align: center;
+
+        h2 {
+          font-size: 25px;
+        }
+
+        p {
+          font-size: 13px;
+        }
+
+        button {
+          font-size: 15px;
+          padding: 12px 30px;
+          height: 45px;
+          width: 200px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .project_container {
+      .left {
+        img {
+          height: 250px;
+          width: 250px;
+        }
+      }
+
+      .right {
+        h2 {
+          font-size: 20px;
+        }
+
+        p {
+          font-size: 12px;
+        }
+
+        button {
+          font-size: 13px;
+          padding: 10px 25px;
+          // height: 40px;
+          // width: 150px;
+          width: fit-content;
         }
       }
     }

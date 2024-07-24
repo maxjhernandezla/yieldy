@@ -1,0 +1,39 @@
+// .slider-container {
+//   width: 100%;
+//   .slick-slide img {
+//     width: 100%;
+//     height: auto;
+//     display: block;
+//   }
+//   .slick-prev,
+//   .slick-next {
+//     z-index: 1;
+//   }
+// }
+.slider-container {
+  .screenshot {
+    // Efecto hover para pantallas grandes
+    // &:hover {
+    //   border: $red 3px solid;
+    //   transition: all 1.4s;
+    // }
+
+    img {
+      width: 247px;
+      height: 528px;
+      border: $grey-border 3px solid;
+
+      // Ajusta el tamaño de las imágenes en dispositivos móviles
+      @media (max-width: 768px) {
+        width: 200px;
+        height: auto; // Mantiene la relación de aspecto
+      }
+
+      @media (max-width: 480px) {
+        width: 100%;
+        height: auto; // Mantiene la relación de aspecto
+        max-width: 300px; // Limita el tamaño máximo en pantallas pequeñas
+      }
+    }
+  }
+}

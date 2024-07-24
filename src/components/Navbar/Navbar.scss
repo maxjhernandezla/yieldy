@@ -2,7 +2,7 @@
 
 .navbar {
   background-color: $dark-blue;
-  width: 100%;
+  width: max-content;
   .navbar_container {
     display: flex;
     flex-direction: row;

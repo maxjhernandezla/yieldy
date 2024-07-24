@@ -1,4 +1,5 @@
 
+import { Link } from 'react-router-dom';
 import logo from '../../images/logo_horiz_wide_trns.png'
 import './Navbar.scss';
 const Navbar = () =>
@@ -7,7 +8,9 @@ const Navbar = () =>
         <div className='navbar'>
             <div className="navbar_container">
                 <div className="left">
-                    <img src={logo} alt="logo" className='logo' />
+                    <Link to='/'>
+                        <img src={logo} alt="logo" className='logo' />
+                    </Link>
                 </div>
                 <div className="right">
                     <ul className="nav_links">
@@ -16,7 +19,7 @@ const Navbar = () =>
                         <li>Plataforma</li>
                         <li>Beneficios</li>
                         <li>Nosotros</li>
-                        <li>Simulador</li>
+                        <li><Link to='/simulator'>Simulador</Link></li>
                         <li>Contacto</li>
                     </ul>
                 </div>

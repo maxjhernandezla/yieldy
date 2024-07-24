@@ -1,31 +1,38 @@
-import { set, ref } from "firebase/database";
-import { db } from "../firebase";
+import { set, ref } from 'firebase/database';
+import { db } from '../firebase';
 import { v4 as uuidv4 } from 'uuid';
 
-const postToFirebase = (cultivo,
+const postToFirebase = (
+    cultivo,
     tamañoLotes,
     rendimientoEsperado,
-    rendimientoIndiferencia) =>
+    rendimientoIndiferencia,
+    adquiere,
+    comentarios,
+    primaResult
+) =>
 {
     const id = uuidv4();
-    set(ref(db, `/${id}`), {
+    const date = new Date().toISOString();
+    return set(ref(db, `/${id}`), {
         id,
         cultivo,
         tamañoLotes,
         rendimientoEsperado,
-        rendimientoIndiferencia
+        rendimientoIndiferencia,
+        adquiere,
+        comentarios,
+        date,
+        primaResult,
     })
         .then(() =>
         {
-            console.log('Data saved successfully.');
+            return 'success'; // Return the status
         })
         .catch((error) =>
         {
-            console.error('Error saving data:', error);
+            return 'error'; // Return the status
         });
-}
+};
 
-export
-{
-    postToFirebase
-}
+export { postToFirebase };

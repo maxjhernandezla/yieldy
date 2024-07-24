@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import './Simulator.scss';
-import Modal from '../../components/Modal/Modal';
-import { useModal } from '../../context/ModalContext';
-import { postToFirebase } from '../../helpers/postToFirebase';
+import { useResult } from '../../context/ResultContext';
+import { useNavigate } from 'react-router-dom';
 
 const Simulator = () =>
 {
@@ -10,8 +9,8 @@ const Simulator = () =>
     const [tamañoLotes, setTamañoLotes] = useState('');
     const [rendimientoEsperado, setRendimientoEsperado] = useState('');
     const [rendimientoIndiferencia, setRendimientoIndiferencia] = useState('');
-    const { openModal } = useModal();
-
+    const { generateSimulatorData } = useResult();
+    const navigate = useNavigate()
     const [errors, setErrors] = useState({
         cultivo: '',
         tamañoLotes: '',
@@ -35,16 +34,8 @@ const Simulator = () =>
         const hasErrors = Object.values(newErrors).some(error => error);
         if (!hasErrors)
         {
-            const text = `De haber adquirido esta garantía, usted tendría garantizado un rinde de 1000 kg por hectárea. 
-A usted le habría costado un porcentaje de 5% sobre el rinde, es decir:
-125 kg por hectárea, de alcanzar el rendimiento esperado
-Equivalentemente, 625 toneladas, a 450$/t, el precio total de la garantía equivaldría a $281,000.
-`;
-            openModal(text);
-            postToFirebase(cultivo,
-                tamañoLotes,
-                rendimientoEsperado,
-                rendimientoIndiferencia)
+            generateSimulatorData(cultivo, tamañoLotes, rendimientoEsperado, rendimientoIndiferencia);
+            navigate('/survey')
         }
     };
 
@@ -82,7 +73,6 @@ Equivalentemente, 625 toneladas, a 450$/t, el precio total de la garantía equiv
                     <button type="submit">Simular</button>
                 </form>
             </div>
-            <Modal />
         </div>
     );
 };

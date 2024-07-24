@@ -1,12 +1,14 @@
 import './PlatformBottom.scss'
-import s1 from '../../images/img1.png'
+import ImagesSlider from '../Slider/Slider'
 const PlatformBottom = () =>
 {
     return (
+
         <div className='platform_bottom'>
             <h2>Screenshots</h2>
             <div className="screenshots">
-                <div className="screenshot">
+                <ImagesSlider />
+                {/* <div className="screenshot">
                     <img src={s1} alt="" />
                 </div>
                 <div className="screenshot">
@@ -18,6 +20,18 @@ const PlatformBottom = () =>
                 <div className="screenshot">
                     <img src={s1} alt="" />
                 </div>
+                <div className="screenshot">
+                    <img src={s1} alt="" />
+                </div>
+                <div className="screenshot">
+                    <img src={s1} alt="" />
+                </div>
+                <div className="screenshot">
+                    <img src={s1} alt="" />
+                </div>
+                <div className="screenshot">
+                    <img src={s1} alt="" />
+                </div> */}
             </div>
         </div>
     )

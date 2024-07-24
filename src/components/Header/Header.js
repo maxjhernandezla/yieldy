@@ -1,15 +1,21 @@
 import React from 'react'
 import './Header.scss'
-const Header = () =>
+const Header = ({ title, description, button }) =>
 {
     return (
         <div className='header'>
             <div className="header_container">
                 <div className="header_text_container">
                     <div className="header_text">
-                        <h1>Garantía de Rendimiento</h1>
-                        <p>Enfoque innovador que combina datos georreferenciados, aprendizaje automático e imágenes satelitales para brindarte la precisión y seguridad que necesitas en cada temporada agrícola. Con Yieldy, maximiza tus rendimientos y minimiza los riesgos.</p>
-                        <button>Comenzar simulación</button>
+                        <h1>{title}</h1>
+                        {
+                            description &&
+                            <p>{description}</p>
+                        }
+                        {
+                            button &&
+                            <button>{button}</button>
+                        }
                     </div>
                 </div>
             </div>

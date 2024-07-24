@@ -11,15 +11,18 @@ import Header from '../components/Header/Header'
 
 const LandingRouter = () =>
 {
+    const title = 'Garantía de Rendimiento';
+    const description = 'Enfoque innovador que combina datos georreferenciados, aprendizaje automático e imágenes satelitales para brindarte la precisión y seguridad que necesitas en cada temporada agrícola. Con Yieldy, maximiza tus rendimientos y minimiza los riesgos.';
+    const button = 'Comenzar simulación'
     return (
         <div>
-            <Header />
+            <Header title={title} description={description} button={button} />
             <Project />
             <HowItWorks />
             <Platform />
-            <Benefits />
+            {/* <Benefits />
             <Contact />
-            <Suscribe />
+            <Suscribe /> */}
         </div>
     )
 }
