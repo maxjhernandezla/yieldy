@@ -20,8 +20,8 @@ const LandingRouter = () =>
             <Project />
             <HowItWorks />
             <Platform />
-            {/* <Benefits />
-            <Contact />
+            {/* <Benefits /> */}
+            {/* <Contact />
             <Suscribe /> */}
         </div>
     )

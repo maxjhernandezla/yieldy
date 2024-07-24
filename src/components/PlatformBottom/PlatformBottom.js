@@ -8,30 +8,6 @@ const PlatformBottom = () =>
             <h2>Screenshots</h2>
             <div className="screenshots">
                 <ImagesSlider />
-                {/* <div className="screenshot">
-                    <img src={s1} alt="" />
-                </div>
-                <div className="screenshot">
-                    <img src={s1} alt="" />
-                </div>
-                <div className="screenshot">
-                    <img src={s1} alt="" />
-                </div>
-                <div className="screenshot">
-                    <img src={s1} alt="" />
-                </div>
-                <div className="screenshot">
-                    <img src={s1} alt="" />
-                </div>
-                <div className="screenshot">
-                    <img src={s1} alt="" />
-                </div>
-                <div className="screenshot">
-                    <img src={s1} alt="" />
-                </div>
-                <div className="screenshot">
-                    <img src={s1} alt="" />
-                </div> */}
             </div>
         </div>
     )

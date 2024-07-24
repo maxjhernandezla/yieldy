@@ -1,0 +1,58 @@
+.slider-container {
+  position: relative;
+  overflow-x: hidden;
+}
+.slider-container .slick-list .slick-track {
+  width: 100%;
+}
+
+.slider-container .slick-list {
+  margin: 0 auto; /* Asegúrate de centrar el contenido si es necesario */
+  padding: 0;
+}
+
+.slider-container .slick-list .slick-track .slick-slide .screenshot {
+  align-self: center;
+}
+
+.slider-container .slick-list .slick-track .slick-slide div img {
+  width: 247px;
+  height: 528px;
+  border: 3px solid #dadada;
+  border-radius: 4px;
+}
+
+.slider-container .slick-list .slick-track .slick-slide div img:hover {
+  border: #f33030 3px solid;
+  transition: all 1.4s;
+}
+
+.slider-container .slick-list .slick-track .slick-slide div {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding: 25px;
+}
+
+@media (max-width: 768px) {
+  .slider-container .slick-list .slick-track .slick-slide div img {
+    width: 200px;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .slider-container .slick-list .slick-track .slick-slide div img {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+  }
+}
+
+.slick-dots {
+  position: absolute;
+  bottom: 10px; /* Ajusta la posición de los dots según sea necesario */
+  width: 100%; /* Asegúrate de que los dots ocupen todo el ancho del contenedor */
+  display: flex;
+  justify-content: center; /* Centra los dots horizontalmente */
+}

@@ -47,7 +47,7 @@
     text-align: center;
     border-bottom: $yellow 3px solid;
     padding-bottom: 25px;
-    margin-bottom: 15px;
+    margin-bottom: 50px;
     color: $grey-text;
     font-weight: 400;
     padding-top: 150px;
@@ -74,6 +74,10 @@
     // height: 1000px;
     // background-color: red;
     width: 100%;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    // overflow: hidden;
     // height: 1000px;
     // background-color: red;
 
