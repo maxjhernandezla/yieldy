@@ -11,8 +11,8 @@ const Footer = () =>
                     <FontAwesomeIcon icon={faLinkedinIn} />
                 </div>
                 <div className="text_container">
-                    <p>Copyright 2024 - Yieldy &reg;</p>
-                    <span>yieldy.ai</span>
+                    <p className='open_sans'>Copyright 2024 - Yieldy &reg;</p>
+                    <span className='open_sans'>yieldy.ai</span>
                 </div>
             </div>
         </div>

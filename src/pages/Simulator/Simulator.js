@@ -46,31 +46,31 @@ const Simulator = () =>
                 <form onSubmit={handleSubmit}>
                     <div className="form_item">
                         <p>Cultivo</p>
-                        <select name="cultivo" id="cultivo" value={cultivo} onChange={(e) => setCultivo(e.target.value)}>
-                            <option value="">Seleccione un cultivo</option>
-                            <option value="soja">Soja</option>
-                            <option value="trigo">Trigo</option>
-                            <option value="maiz">Maíz</option>
-                            <option value="otro">Otro</option>
+                        <select className='open_sans' name="cultivo" id="cultivo" value={cultivo} onChange={(e) => setCultivo(e.target.value)}>
+                            <option className='open_sans' value="">Seleccione un cultivo</option>
+                            <option className='open_sans' value="soja">Soja</option>
+                            <option className='open_sans' value="trigo">Trigo</option>
+                            <option className='open_sans' value="maiz">Maíz</option>
+                            <option className='open_sans' value="otro">Otro</option>
                         </select>
                         {errors.cultivo && <span className="error">{errors.cultivo}</span>}
                     </div>
                     <div className="form_item">
-                        <p>Tamaño de lotes</p>
-                        <input type="number" placeholder='Ingrese área [ha]' value={tamañoLotes} onChange={(e) => setTamañoLotes(e.target.value)} />
-                        {errors.tamañoLotes && <span className="error">{errors.tamañoLotes}</span>}
+                        <p >Tamaño de lotes</p>
+                        <input className='open_sans' type="number" placeholder='Ingrese área [ha]' value={tamañoLotes} onChange={(e) => setTamañoLotes(e.target.value)} />
+                        {errors.tamañoLotes && <span className="error open_sans">{errors.tamañoLotes}</span>}
                     </div>
                     <div className="form_item">
                         <p>Rendimiento esperado</p>
-                        <input type="number" placeholder='Ingrese cantidad [kg]' value={rendimientoEsperado} onChange={(e) => setRendimientoEsperado(e.target.value)} />
-                        {errors.rendimientoEsperado && <span className="error">{errors.rendimientoEsperado}</span>}
+                        <input className='open_sans' type="number" placeholder='Ingrese cantidad [kg]' value={rendimientoEsperado} onChange={(e) => setRendimientoEsperado(e.target.value)} />
+                        {errors.rendimientoEsperado && <span className="error open_sans">{errors.rendimientoEsperado}</span>}
                     </div>
                     <div className="form_item">
-                        <p>Rendimiento de indiferencia</p>
-                        <input type="number" placeholder='Ingrese cantidad [kg]' value={rendimientoIndiferencia} onChange={(e) => setRendimientoIndiferencia(e.target.value)} />
-                        {errors.rendimientoIndiferencia && <span className="error">{errors.rendimientoIndiferencia}</span>}
+                        <p >Rendimiento de indiferencia</p>
+                        <input className='open_sans' type="number" placeholder='Ingrese cantidad [kg]' value={rendimientoIndiferencia} onChange={(e) => setRendimientoIndiferencia(e.target.value)} />
+                        {errors.rendimientoIndiferencia && <span className="error open_sans">{errors.rendimientoIndiferencia}</span>}
                     </div>
-                    <button type="submit">Simular</button>
+                    <button className='open_sans' type="submit">Simular</button>
                 </form>
             </div>
         </div>

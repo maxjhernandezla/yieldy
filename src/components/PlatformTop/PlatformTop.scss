@@ -89,10 +89,10 @@
       flex-direction: column;
 
       h2 {
-        font-size: 28px; // Ajustado tamaño de fuente para pantallas más pequeñas
-        font-weight: 100;
+        font-size: 30px; // Ajustado tamaño de fuente para pantallas más pequeñas
+        font-weight: 500;
         color: $grey-text;
-        margin-bottom: 20px; // Ajustado margen en pantallas más pequeñas
+        margin-bottom: 25px; // Ajustado margen en pantallas más pequeñas
         margin-top: 20px;
       }
 
@@ -101,31 +101,31 @@
         flex-direction: row;
         align-items: flex-start; // Centra verticalmente los elementos
         margin-bottom: 20px; // Ajustado margen en pantallas más pequeñas
-
         .text_container {
           margin-left: 10px;
-          width: 70%; // Ocupa toda la anchura disponible
+          width: 90%; // Ocupa toda la anchura disponible
 
           h4 {
+            font-weight: 500;
+            font-size: 20px;
             color: $grey-text;
-            font-weight: 300;
             margin-bottom: 10px;
-            font-size: 1.1em; // Ajustado tamaño de fuente para pantallas más pequeñas
-            line-height: 1.3em; // Ajustado line-height para mejorar la legibilidad
+            line-height: 1.5; // Ajustado line-height para mejorar la legibilidad
           }
 
           p {
-            font-weight: 100;
+            // width: 100%;
+            font-weight: 300;
             padding: 0 0 16px 0;
-            line-height: 1.4em;
-            font-size: 16px; // Ajustado tamaño de fuente para pantallas más pequeñas
+            line-height: 1.5;
+            font-size: 17px; // Ajustado tamaño de fuente para pantallas más pequeñas
             color: $grey-text;
           }
         }
 
         .icon {
-          width: 50px; // Ajustado tamaño del ícono para pantallas más pequeñas
-          height: 50px;
+          width: 60px; // Ajustado tamaño del ícono para pantallas más pequeñas
+          height: 60px;
           border-radius: 50%;
           border: $gold 1px solid;
           display: flex;
@@ -134,9 +134,9 @@
 
           svg {
             color: $gold;
-            width: 18px; // Ajustado tamaño del SVG para pantallas más pequeñas
-            height: 19px;
-            font-weight: bold;
+            width: 22px; // Ajustado tamaño del SVG para pantallas más pequeñas
+            height: 23px;
+            font-weight: bolder;
           }
         }
       }
@@ -160,15 +160,15 @@
 
 // Media query para pantallas más grandes
 @media (max-width: 768px) {
-  .platform {
+  .platform_top {
     .platform_container {
       flex-direction: column;
       .right {
         width: 100%;
         .platform_item {
-          width: 100%;
+          width: 90%;
           .text_container {
-            width: 100%;
+            width: 90%;
           }
         }
       }
@@ -180,7 +180,7 @@
 }
 
 @media (max-width: 425px) {
-  .platform {
+  .platform_top {
     .platform_container {
       flex-direction: column;
       .right {
@@ -188,7 +188,7 @@
         .platform_item {
           width: 100%;
           .text_container {
-            width: 100%;
+            width: 90%;
           }
         }
       }

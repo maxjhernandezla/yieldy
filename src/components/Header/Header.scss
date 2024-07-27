@@ -28,19 +28,22 @@
       margin-bottom: 50px;
       .header_text {
         h1 {
-          font-size: 50px;
+          font-size: 56px;
           color: $white;
-          font-weight: 300;
+          font-weight: 400;
           margin-bottom: 20px;
+          // -webkit-text-stroke: 0.7px $text-black;
+          margin-top: 50px;
         }
         p {
-          font-size: 16px;
-          line-height: 1.5;
+          line-height: 1.8;
           margin-bottom: 20px;
-          font-weight: 100;
+          font-weight: 400;
           text-align: start;
           padding-bottom: 16px;
           color: $white;
+          -webkit-text-stroke: 0.1px $text-black;
+          width: 80%;
         }
         button {
           background-color: $gold;
@@ -57,6 +60,9 @@
           &:hover {
             background-color: transparent;
             transition: all 0.4s;
+          }
+          &.open_sans {
+            font-weight: 600;
           }
         }
       }
@@ -89,7 +95,6 @@
           }
 
           p {
-            // font-size: 0.9em; // Ajusta el tamaño del texto para pantallas medianas
           }
 
           button {
@@ -109,19 +114,21 @@
         margin-left: 30px;
 
         .header_text {
+          margin-top: 0;
           h1 {
             font-size: 40px; // Tamaño de fuente aún más pequeño
+            margin-top: 0;
           }
 
           p {
-            font-size: 14px; // Tamaño de fuente aún más pequeño
-            font-weight: 300;
+            font-size: 18px; // Tamaño de fuente aún más pequeño
+            line-height: 1.5;
+            width: 100%;
+            margin: 0;
           }
 
           button {
-            font-size: 0.8em; // Ajusta el tamaño del texto del botón
-            padding: 5px 10px; // Ajusta el padding del botón
-            margin-top: 25px;
+            font-weight: 500;
           }
         }
       }

@@ -1,69 +1,15 @@
-// @import '../../App.scss';
-// .footer {
-//   height: 178px;
-//   background-color: $text-black;
-//   display: flex;
-//   justify-content: center;
-//   .footer_container {
-//     width: 100%;
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     justify-content: center;
-//     .icon {
-//       display: flex;
-//       align-items: center;
-//       justify-content: center;
-//       width: 40px;
-//       height: 40px;
-//       border-radius: 100%;
-//       color: $text-black;
-//       margin-bottom: 20px;
-//       background-color: $grey-text;
-//       cursor: pointer;
-//       &:hover {
-//         background-color: black;
-//         color: $white;
-//         transition: all 0.4s;
-//       }
-//     }
-//     .text_container {
-//       display: flex;
-//       flex-direction: row;
-//       margin: 0;
-
-//       p {
-//         color: #a7a7a7;
-//         font-weight: 100;
-//         font-size: 14px;
-//       }
-//       span {
-//         color: $light-blue;
-//         font-weight: bolder;
-//         font-size: 14px;
-//       }
-//     }
-//   }
-// }
-
 @import '../../App.scss';
-
 .footer {
-  height: auto; // Ajustar altura automáticamente según el contenido
+  height: 178px;
   background-color: $text-black;
   display: flex;
   justify-content: center;
-  padding: 20px; // Añadir padding para mejorar el espaciado
-
   .footer_container {
     width: 100%;
-    max-width: 1200px; // Limitar el ancho máximo en pantallas grandes
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center; // Centrar texto para pantallas más pequeñas
-
     .icon {
       display: flex;
       align-items: center;
@@ -75,51 +21,106 @@
       margin-bottom: 20px;
       background-color: $grey-text;
       cursor: pointer;
-
       &:hover {
         background-color: black;
         color: $white;
         transition: all 0.4s;
       }
-
-      // Ajustes para pantallas más pequeñas
-      @media (max-width: 768px) {
-        width: 35px;
-        height: 35px;
-      }
-
-      @media (max-width: 480px) {
-        width: 30px;
-        height: 30px;
-      }
     }
-
     .text_container {
       display: flex;
-      flex-direction: column; // Cambiar a columna en pantallas pequeñas
-      align-items: center; // Alinear al centro
-      gap: 10px; // Espacio entre los elementos
+      flex-direction: row;
+      margin: 0;
 
-      p,
-      span {
+      p {
         color: #a7a7a7;
         font-weight: 100;
-        font-size: 14px;
-
-        // Ajustes para pantallas más pequeñas
-        @media (max-width: 768px) {
-          font-size: 12px;
-        }
-
-        @media (max-width: 480px) {
-          font-size: 11px;
-        }
+        font-size: 15px;
+        margin-right: 5px;
       }
-
       span {
         color: $light-blue;
         font-weight: bolder;
+        font-size: 14px;
       }
     }
   }
 }
+
+// @import '../../App.scss';
+
+// .footer {
+//   height: auto; // Ajustar altura automáticamente según el contenido
+//   background-color: $text-black;
+//   display: flex;
+//   justify-content: center;
+//   padding: 20px; // Añadir padding para mejorar el espaciado
+
+//   .footer_container {
+//     width: 100%;
+//     max-width: 1200px; // Limitar el ancho máximo en pantallas grandes
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: center;
+//     text-align: center; // Centrar texto para pantallas más pequeñas
+
+//     .icon {
+//       display: flex;
+//       align-items: center;
+//       justify-content: center;
+//       width: 40px;
+//       height: 40px;
+//       border-radius: 100%;
+//       color: $text-black;
+//       margin-bottom: 20px;
+//       background-color: $grey-text;
+//       cursor: pointer;
+
+//       &:hover {
+//         background-color: black;
+//         color: $white;
+//         transition: all 0.4s;
+//       }
+
+//       // Ajustes para pantallas más pequeñas
+//       @media (max-width: 768px) {
+//         width: 35px;
+//         height: 35px;
+//       }
+
+//       @media (max-width: 480px) {
+//         width: 30px;
+//         height: 30px;
+//       }
+//     }
+
+//     .text_container {
+//       display: flex;
+//       flex-direction: column; // Cambiar a columna en pantallas pequeñas
+//       align-items: center; // Alinear al centro
+//       gap: 10px; // Espacio entre los elementos
+
+//       p,
+//       span {
+//         color: #a7a7a7;
+//         font-weight: 100;
+//         font-size: 14px;
+
+//         // Ajustes para pantallas más pequeñas
+//         @media (max-width: 768px) {
+//           font-size: 12px;
+//         }
+
+//         @media (max-width: 480px) {
+//           font-size: 11px;
+//         }
+//       }
+
+//       span {
+//         color: $light-blue;
+//         font-weight: bolder;
+//       }
+//     }
+//   }
+// }

@@ -68,12 +68,3 @@
 .slick-dots li {
   margin: 0 5px; /* Espacio entre los puntos de navegación */
 }
-
-.slick-dots li button:before {
-  font-size: 12px; /* Tamaño de los puntos */
-  color: grey; /* Color de los puntos */
-}
-
-.slick-dots li.slick-active button:before {
-  color: red; /* Color de los puntos activos */
-}

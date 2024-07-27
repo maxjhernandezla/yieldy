@@ -6,7 +6,7 @@ import './Platform.scss'
 const Platform = () =>
 {
     return (
-        <div className='platform'>
+        <div className='platform_general'>
             <PlatformTop />
             <PlatformBottom />
         </div>

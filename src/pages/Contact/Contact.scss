@@ -108,7 +108,8 @@
   align-items: center;
   width: 100%;
   justify-content: center;
-  height: 60vh;
+  min-height: 60vh;
+  margin-bottom: 50px;
 
   @media (max-width: 768px) {
     height: auto;
@@ -120,15 +121,16 @@
     flex-direction: row;
     width: 100%;
     gap: 50px;
+    margin: 0 100px;
 
     @media (max-width: 1024px) {
       gap: 30px;
     }
 
     @media (max-width: 768px) {
-      flex-direction: column;
+      flex-direction: column-reverse;
       gap: 20px;
-      width: 90%;
+      margin: 25px;
     }
 
     .left {
@@ -156,12 +158,13 @@
           margin-bottom: 15px;
           padding: 20px;
           border-radius: 0;
-          font-size: 16px;
+          font-size: 17px;
           font-weight: 200;
           border: 1px solid $grey-background;
+          resize: none;
 
           @media (max-width: 768px) {
-            font-size: 14px;
+            // font-size: 14px;
             padding: 15px;
           }
 
@@ -176,11 +179,11 @@
           padding: 20px;
           color: $white;
           border: none;
-          font-weight: 300;
+          font-weight: 500;
           font-size: 18px;
 
           @media (max-width: 768px) {
-            font-size: 16px;
+            // font-size: 16px;
             padding: 15px;
           }
 
@@ -214,34 +217,34 @@
 
         h2 {
           font-size: 30px;
-          font-weight: 200;
+          font-weight: 400;
           margin-bottom: 20px;
 
-          @media (max-width: 768px) {
-            font-size: 24px;
-          }
+          // @media (max-width: 768px) {
+          //   font-size: 24px;
+          // }
         }
 
         span {
           line-height: 1.8;
-          font-size: 16px;
+          font-size: 17px;
           font-weight: 200;
           border-block-start: 20px;
 
-          @media (max-width: 768px) {
-            font-size: 14px;
-          }
+          // @media (max-width: 768px) {
+          //   font-size: 14px;
+          // }
         }
 
         p {
           color: $light-blue;
-          font-size: 16px;
+          font-size: 17px;
           font-weight: 500;
           margin-top: 15px;
 
-          @media (max-width: 768px) {
-            font-size: 14px;
-          }
+          // @media (max-width: 768px) {
+          //   font-size: 14px;
+          // }
         }
       }
     }

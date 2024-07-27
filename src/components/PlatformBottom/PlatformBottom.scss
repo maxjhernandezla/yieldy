@@ -1,116 +1,26 @@
-// @import '../../App.scss';
-
-// .platform_bottom {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   h2 {
-//     font-size: 1.5em;
-//     text-align: center;
-//     border-bottom: $yellow 3px solid;
-//     padding-bottom: 25px;
-//     margin-bottom: 15px;
-//     color: $grey-text;
-//     font-weight: 400;
-//     padding-top: 150px;
-//   }
-//   .screenshots {
-//     padding-top: 75px;
-//     display: flex;
-//     flex-direction: row;
-//     gap: 40px;
-//     align-items: center;
-//     margin-bottom: 50px;
-//     .screenshot {
-//       :hover {
-//         border: $red 3px solid;
-//         transition: all 1.4s;
-//       }
-//       img {
-//         width: 247px;
-//         height: 528px;
-//         border: $grey-border 3px solid;
-//       }
-//     }
-//   }
-// }
-
 @import '../../App.scss';
 
 .platform_bottom {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 90%;
 
   h2 {
-    font-size: 1.5em; // Ajusta el tamaño del texto
+    font-size: 30px; // Ajusta el tamaño del texto
     text-align: center;
     border-bottom: $yellow 3px solid;
     padding-bottom: 25px;
     margin-bottom: 50px;
     color: $grey-text;
-    font-weight: 400;
+    font-weight: 500;
     padding-top: 150px;
-
-    // Ajusta el tamaño del texto en dispositivos móviles
-    // @media (max-width: 768px) {
-    //   font-size: 1.2em;
-    //   padding-top: 100px;
-    // }
-
-    // @media (max-width: 480px) {
-    //   font-size: 1em;
-    //   padding-top: 75px;
-    // }
   }
 
   .screenshots {
-    // padding-top: 75px;
-    // display: flex;
-    // flex-direction: row;
-    // gap: 40px;
-    // align-items: center;
-    // margin-bottom: 50px;
-    // height: 1000px;
-    // background-color: red;
     width: 100%;
     margin-bottom: 50px;
     display: flex;
     justify-content: center;
-    // overflow: hidden;
-    // height: 1000px;
-    // background-color: red;
-
-    // Ajusta la disposición de las capturas de pantalla en dispositivos móviles
-    // @media (max-width: 768px) {
-    //   flex-direction: column;
-    //   gap: 20px;
-    // }
-
-    // .screenshot {
-    //   // Efecto hover para pantallas grandes
-    //   &:hover {
-    //     border: $red 3px solid;
-    //     transition: all 1.4s;
-    //   }
-
-    //   img {
-    //     width: 247px;
-    //     height: 528px;
-    //     border: $grey-border 3px solid;
-
-    //     // Ajusta el tamaño de las imágenes en dispositivos móviles
-    //     @media (max-width: 768px) {
-    //       width: 200px;
-    //       height: auto; // Mantiene la relación de aspecto
-    //     }
-
-    //     @media (max-width: 480px) {
-    //       width: 100%;
-    //       height: auto; // Mantiene la relación de aspecto
-    //       max-width: 300px; // Limita el tamaño máximo en pantallas pequeñas
-    //     }
-    //   }
-    // }
   }
 }

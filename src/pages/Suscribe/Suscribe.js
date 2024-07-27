@@ -11,10 +11,10 @@ const Suscribe = () =>
                     <div className="icon">
                         <FontAwesomeIcon icon={faEnvelope} />
                     </div>
-                    <p>¡Suscribite para recibir información actualizada del proyecto!</p>
+                    <p className='open_sans'>¡Suscribite para recibir información actualizada del proyecto!</p>
                     <div className="input">
-                        <input type="text" className="input" placeholder='Tu email...' />
-                        <button>SUBSCRIBE</button>
+                        <input type="text" className="input open_sans" placeholder='Tu email...' />
+                        <button className='open_sans'>SUBSCRIBE</button>
                     </div>
                 </div>
             </div>

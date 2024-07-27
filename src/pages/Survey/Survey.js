@@ -6,12 +6,11 @@ import './Survey.scss';
 
 const Survey = () =>
 {
-    let { generateSurveyData, text } = useResult();
+    const { generateSurveyData, simulatorData, primaResult } = useResult();
     const [adquiere, setAdquiere] = useState('');
     const [porque, setPorque] = useState('');
     const [comentarios, setComentarios] = useState('');
-    const [errors, setErrors] = useState({ adquiere: '', comentarios: '', porque: '', otro: '' });
-    const [otro, setOtro] = useState('');
+    const [errors, setErrors] = useState({ adquiere: '', comentarios: '', porque: '', otroMotivo: '' });
     const [otroMotivo, setOtroMotivo] = useState('');
 
     const navigate = useNavigate();
@@ -23,7 +22,7 @@ const Survey = () =>
             adquiere: !adquiere ? 'Por favor, seleccione una opción' : '',
             comentarios: !comentarios ? 'Por favor, ingrese sus comentarios' : '',
             porque: (adquiere === 'no' || adquiere === 'quizas') && !porque ? 'Por favor, seleccione una opción' : '',
-            otro: porque === 'otro' && !otro ? 'Por favor, especifique' : ''
+            otroMotivo: porque === 'otro' && !otroMotivo ? 'Por favor, especifique' : ''
         };
         setErrors(newErrors);
 
@@ -32,7 +31,7 @@ const Survey = () =>
         {
             try
             {
-                generateSurveyData(adquiere, comentarios, porque, otroMotivo || otro);
+                await generateSurveyData(adquiere, comentarios, porque, otroMotivo);
                 Swal.fire({
                     icon: 'success',
                     title: 'Gracias por usar nuestro simulador!',
@@ -54,70 +53,71 @@ const Survey = () =>
         }
     };
 
-    text = `
-            Rendimiento Garantizado: \n
-            Cantidad de Has.: \n
-            Rendimiento Esperado: \n
-            Tasa de la Garantía: \n
-            Prima Total:
-    `;
-
     return (
         <div className='survey'>
             <div className="survey_container">
                 <div className="subtitle">
-                    <p>Conozca el impacto de nuestra garantía en su producción agrícola.</p>
-                    <p>Gracias por usar nuestro simulador de garantía de rendimiento!</p>
+                    <h4>Conozca el impacto de nuestra garantía en su producción agrícola.</h4>
+                    <h4>Gracias por usar nuestro simulador de garantía de rendimiento!</h4>
                 </div>
                 <div className="text_container">
-                    <p>{text}</p>
+                    <div className="results">
+                        <h4>Resultados</h4>
+                        <ul>
+                            <li className='open_sans'>Rendimiento Garantizado: {simulatorData.rendimientoEsperado} kg/ha</li>
+                            <li className='open_sans'>Cantidad de hectareas: {simulatorData.tamañoLotes}</li>
+                            <li className='open_sans'>Rendimiento Esperado: {simulatorData.rendimientoEsperado} kg/ha</li>
+                            <li className='open_sans'>Tasa de la Garantía: {(primaResult * 100).toFixed(2)}%</li>
+                            <li className='open_sans'>Prima Total: {simulatorData.rendimientoEsperado} / {primaResult}</li>
+                        </ul>
+                    </div>
                 </div>
                 <form onSubmit={handleSubmit}>
                     <div className="form_item">
                         <p>¿Adquirirías este producto?</p>
-                        <select name="adquirir" id="adquirir" value={adquiere} onChange={(e) => setAdquiere(e.target.value)}>
-                            <option value="">Seleccione una opción</option>
-                            <option value="si">Si</option>
-                            <option value="no">No</option>
-                            <option value="quizas">Quizás</option>
+                        <select className='open_sans' name="adquirir" id="adquirir" value={adquiere} onChange={(e) => setAdquiere(e.target.value)}>
+                            <option className='open_sans' value="">Seleccione una opción</option>
+                            <option className='open_sans' value="si">Si</option>
+                            <option className='open_sans' value="no">No</option>
+                            <option className='open_sans' value="quizas">Quizás</option>
                         </select>
-                        {errors.adquiere && <span className="error">{errors.adquiere}</span>}
+                        {errors.adquiere && <span className="error open_sans">{errors.adquiere}</span>}
                     </div>
                     {
                         (adquiere === 'no' || adquiere === 'quizas') && (
                             <div className="form_item">
                                 <p>Si respondió "No" o "Quizás", por favor indíquenos qué factores influyen en su decisión:</p>
-                                <select name="porque" id="porque" value={porque} onChange={(e) => setPorque(e.target.value)}>
-                                    <option value="">Seleccione una opción</option>
-                                    <option value="costoAlto">El costo es demasiado alto</option>
-                                    <option value="noEntiendo">No entiendo completamente cómo funciona</option>
-                                    <option value="noNecesito">No creo que necesite este tipo de garantía</option>
-                                    <option value="otrasFormasDePago">Prefiero otras formas de gestionar el riesgo</option>
-                                    <option value="otro">Otro</option>
+                                <select className='open_sans' name="porque" id="porque" value={porque} onChange={(e) => setPorque(e.target.value)}>
+                                    <option className='open_sans' value="">Seleccione una opción</option>
+                                    <option className='open_sans' value="costoAlto">El costo es demasiado alto</option>
+                                    <option className='open_sans' value="noEntiendo">No entiendo completamente cómo funciona</option>
+                                    <option className='open_sans' value="noNecesito">No creo que necesite este tipo de garantía</option>
+                                    <option className='open_sans' value="otrasFormasDePago">Prefiero otras formas de gestionar el riesgo</option>
+                                    <option className='open_sans' value="otro">Otro</option>
                                 </select>
-                                {errors.porque && <span className="error">{errors.porque}</span>}
+                                {errors.porque && <span className="error open_sans">{errors.porque}</span>}
                                 {
                                     porque === 'otro' && (
-                                        <input
+                                        <input className='open_sans'
                                             type="text"
                                             name="otro"
                                             id="otro"
-                                            value={otro}
-                                            onChange={(e) => setOtro(e.target.value)}
+                                            value={otroMotivo}
+                                            onChange={(e) => setOtroMotivo(e.target.value)}
                                             placeholder="Por favor especifique..."
                                         />
                                     )
                                 }
-                                {errors.otro && <span className="error">{errors.otro}</span>}
+                                {errors.otro && <span className="error open_sans">{errors.otroMotivo}</span>}
                             </div>
                         )
                     }
                     <div className="form_item">
                         <p>Comentarios</p>
-                        <textarea rows="10" placeholder='¿Tiene algún comentario o sugerencia adicional?' value={comentarios} onChange={(e) => setComentarios(e.target.value)} />
-                        {errors.comentarios && <span className="error">{errors.comentarios}</span>}
+                        <textarea className='open_sans' rows="10" placeholder='¿Tiene algún comentario o sugerencia adicional?' value={comentarios} onChange={(e) => setComentarios(e.target.value)} />
+                        {errors.comentarios && <span className="error open_sans">{errors.comentarios}</span>}
                     </div>
-                    <button type="submit">Enviar Encuesta</button>
+                    <button type="submit" className='open_sans'>Enviar Encuesta</button>
                     {/* <button type="button" onClick={() => navigate('/simulator')}>Volver al Simulador</button> */}
                 </form>
             </div>
@@ -126,3 +126,4 @@ const Survey = () =>
 };
 
 export default Survey;
+

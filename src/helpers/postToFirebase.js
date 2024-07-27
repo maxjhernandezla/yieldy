@@ -9,7 +9,9 @@ const postToFirebase = (
     rendimientoIndiferencia,
     adquiere,
     comentarios,
-    primaResult
+    primaResult,
+    porque,
+    otroMotivo
 ) =>
 {
     const id = uuidv4();
@@ -24,6 +26,8 @@ const postToFirebase = (
         comentarios,
         date,
         primaResult,
+        porque,
+        otroMotivo,
     })
         .then(() =>
         {
