@@ -1,9 +1,11 @@
+import { useRefs } from '../../context/RefContext'
 import './Contact.scss'
 
 const Contact = () =>
 {
+    const { contactRef } = useRefs()
     return (
-        <div className='contact'>
+        <div ref={contactRef} className='contact'>
             <div className="contact_container">
                 <div className="left">
                     <form action="submit">

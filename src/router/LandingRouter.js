@@ -36,7 +36,7 @@ import Contact from '../pages/Contact/Contact';
 import Suscribe from '../pages/Suscribe/Suscribe';
 import Header from '../components/Header/Header';
 
-const LandingRouter = ({ refs }) =>
+const LandingRouter = () =>
 {
     const title = 'Garantía de Rendimiento';
     const description = 'Enfoque innovador que combina datos georreferenciados, aprendizaje automático e imágenes satelitales para brindarte la precisión y seguridad que necesitas en cada temporada agrícola. Con Yieldy, maximiza tus rendimientos y minimiza los riesgos.';
@@ -45,22 +45,22 @@ const LandingRouter = ({ refs }) =>
     return (
         <div>
             <Header title={title} description={description} button={button} />
-            <div ref={refs.projectRef}>
+            <div >
                 <Project />
             </div>
-            <div ref={refs.howItWorksRef}>
+            <div >
                 <HowItWorks />
             </div>
-            <div ref={refs.platformRef}>
+            <div >
                 <Platform />
             </div>
-            <div ref={refs.benefitsRef}>
+            <div >
                 <Benefits />
             </div>
-            <div ref={refs.contactRef}>
+            <div >
                 <Contact />
             </div>
-            <div ref={refs.suscribeRef}>
+            <div >
                 <Suscribe />
             </div>
         </div>

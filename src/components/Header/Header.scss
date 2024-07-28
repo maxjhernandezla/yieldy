@@ -47,19 +47,25 @@
         }
         button {
           background-color: $gold;
-          color: $white;
-          font-weight: 700;
-          font-size: 17px;
           margin-right: 10px;
           line-height: 20px;
           padding: 15px 35px;
           height: 50px;
           border: 2px solid $gold;
           border-radius: 100px;
+          a {
+            font-weight: 700;
+            font-size: 17px;
+            text-decoration: none;
+            color: $white;
+          }
           cursor: pointer;
           &:hover {
             background-color: transparent;
             transition: all 0.4s;
+            a {
+              color: $gold;
+            }
           }
           &.open_sans {
             font-weight: 600;
@@ -82,21 +88,9 @@
 
 @media (max-width: 768px) {
   .header {
-    // padding: 0 10px; // Reduce el padding en pantallas medianas
-
     .header_container {
-      // height: 100%;
       .header_text_container {
-        // margin: 10px auto; // Reduce el margen en pantallas medianas
-
         .header_text {
-          h1 {
-            // font-size: 30px; // Ajusta el tamaño del texto para pantallas medianas
-          }
-
-          p {
-          }
-
           button {
             font-size: 0.9em; // Ajusta el tamaño del texto del botón
             padding: 8px 15px; // Ajusta el padding del botón
@@ -114,7 +108,7 @@
         margin-left: 30px;
 
         .header_text {
-          margin-top: 0;
+          margin-top: 50px;
           h1 {
             font-size: 40px; // Tamaño de fuente aún más pequeño
             margin-top: 0;

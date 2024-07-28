@@ -111,6 +111,12 @@
         border: 2px solid $gold;
         border-radius: 100px;
         cursor: pointer;
+        a {
+          font-weight: 700;
+          font-size: 17px;
+          text-decoration: none;
+          color: $gold;
+        }
         &.open_sans {
           font-weight: 1000;
           font-size: 17px;
@@ -118,8 +124,10 @@
 
         &:hover {
           background-color: $gold;
-          color: $white;
           transition: all 0.4s;
+          a {
+            color: $white;
+          }
         }
       }
     }

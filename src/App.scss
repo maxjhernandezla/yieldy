@@ -11,30 +11,21 @@
       format('svg');
   font-weight: normal;
   font-style: normal;
-  /* Add additional font formats if necessary */
-  /* Specify the correct path to the font files */
 }
+
 // @font-face {
-//   font-family: 'Fontawsome';
-//   src: url('./fonts/fontawesome-webfont.eot') format('eot'),
-//     url('./fonts/fontawesome-webfont.ttf') format('truetype'),
-//     url('./fonts/fontawesome-webfont.woff') format('woff'),
+//   font-family: 'Glyphicons Haflings';
+//   src: url('./fonts/glyphicons-halflings-regular.eot') format('eot');
+//   src: url('./fonts/glyphicons-halflings-regular.eot?#iefix')
+//       format('embedded-opentype'),
+//     url('./fonts/glyphicons-halflings-regular.ttf') format('truetype'),
+//     url('./fonts/glyphicons-halflings-regular.woff') format('woff')
+//       url('./fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular')
+//       format('svg');
+
 //   /* Add additional font formats if necessary */
 //   /* Specify the correct path to the font files */
 // }
-@font-face {
-  font-family: 'Glyphicons Haflings';
-  src: url('./fonts/glyphicons-halflings-regular.eot') format('eot');
-  src: url('./fonts/glyphicons-halflings-regular.eot?#iefix')
-      format('embedded-opentype'),
-    url('./fonts/glyphicons-halflings-regular.ttf') format('truetype'),
-    url('./fonts/glyphicons-halflings-regular.woff') format('woff')
-      url('./fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular')
-      format('svg');
-
-  /* Add additional font formats if necessary */
-  /* Specify the correct path to the font files */
-}
 
 * {
   font-family: 'Alegreya Sans', sans-serif;
@@ -57,6 +48,7 @@
 
 $dark-blue: #203864;
 $dark-blue-degrade: #2038649a;
+$navbar-degrade: #203864d0;
 $white: #ffffff;
 $gold: #af9f7d;
 $gold-degrade: #af9f7d8f;

@@ -1,9 +1,12 @@
+import { useRefs } from '../../context/RefContext'
 import './Benefits.scss'
 
 const Benefits = () =>
 {
+    const { benefitsRef } = useRefs()
+
     return (
-        <div className='benefits'>
+        <div ref={benefitsRef} className='benefits'>
             <div className='benefits_container'>
                 <h2>Beneficios</h2>
                 <div className="cards_container">

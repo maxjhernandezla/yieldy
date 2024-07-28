@@ -3,12 +3,12 @@ import './Simulator.scss';
 import { useResult } from '../../context/ResultContext';
 import { useNavigate } from 'react-router-dom';
 
-const Simulator = () =>
+const Simulator = ({ refs, handleScrollTo }) =>
 {
     const [cultivo, setCultivo] = useState('');
     const [tamañoLotes, setTamañoLotes] = useState('');
     const [rendimientoEsperado, setRendimientoEsperado] = useState('');
-    const [rendimientoIndiferencia, setRendimientoIndiferencia] = useState('');
+    const [rendimientoAGarantizar, setRendimientoAGarantizar] = useState('');
     const { generateSimulatorData } = useResult();
     const navigate = useNavigate()
     const [errors, setErrors] = useState({
@@ -18,6 +18,8 @@ const Simulator = () =>
         rendimientoIndiferencia: ''
     });
 
+    console.log(refs);
+
     const handleSubmit = (e) =>
     {
         e.preventDefault();
@@ -25,7 +27,7 @@ const Simulator = () =>
             cultivo: !cultivo ? 'Por favor, seleccione un cultivo' : '',
             tamañoLotes: !tamañoLotes ? 'Por favor, ingrese el tamaño de los lotes' : '',
             rendimientoEsperado: !rendimientoEsperado ? 'Por favor, ingrese el rendimiento esperado' : '',
-            rendimientoIndiferencia: !rendimientoIndiferencia ? 'Por favor, ingrese el rendimiento de indiferencia' : ''
+            rendimientoAGarantizar: !rendimientoAGarantizar ? 'Por favor, ingrese el rendimiento de indiferencia' : ''
         };
 
         setErrors(newErrors);
@@ -34,7 +36,7 @@ const Simulator = () =>
         const hasErrors = Object.values(newErrors).some(error => error);
         if (!hasErrors)
         {
-            generateSimulatorData(cultivo, tamañoLotes, rendimientoEsperado, rendimientoIndiferencia);
+            generateSimulatorData(cultivo, tamañoLotes, rendimientoEsperado, rendimientoAGarantizar);
             navigate('/survey')
         }
     };
@@ -66,9 +68,9 @@ const Simulator = () =>
                         {errors.rendimientoEsperado && <span className="error open_sans">{errors.rendimientoEsperado}</span>}
                     </div>
                     <div className="form_item">
-                        <p >Rendimiento de indiferencia</p>
-                        <input className='open_sans' type="number" placeholder='Ingrese cantidad [kg]' value={rendimientoIndiferencia} onChange={(e) => setRendimientoIndiferencia(e.target.value)} />
-                        {errors.rendimientoIndiferencia && <span className="error open_sans">{errors.rendimientoIndiferencia}</span>}
+                        <p>¿Cuánto querés garantizar?</p>
+                        <input className='open_sans' type="number" placeholder='Ingrese cantidad [kg]' value={rendimientoAGarantizar} onChange={(e) => setRendimientoAGarantizar(e.target.value)} />
+                        {errors.rendimientoAGarantizar && <span className="error open_sans">{errors.rendimientoAGarantizar}</span>}
                     </div>
                     <button className='open_sans' type="submit">Simular</button>
                 </form>

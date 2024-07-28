@@ -4,8 +4,8 @@ import { useResult } from "../context/ResultContext";
 const PrivateRoute = ({ element, ...rest }) =>
 {
     const { simulatorDone } = useResult();
-    // return simulatorDone ? <Outlet /> : <Navigate to='/' />;
-    return <Outlet />;
+    return simulatorDone ? <Outlet /> : <Navigate to='/' />;
+    // return <Outlet />;
 
     ;
 };

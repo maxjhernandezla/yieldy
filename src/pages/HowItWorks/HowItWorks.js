@@ -1,15 +1,14 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './HowItWorks.scss'
-import recycle from '../../images/triangular-arrows-sign-for-recycle.png'
-import chart from '../../images/bar-chart.png'
-import cube from '../../images/3d-cube.png'
 import { faChartColumn } from '@fortawesome/free-solid-svg-icons'
 import { faRecycle } from '@fortawesome/free-solid-svg-icons'
 import { faCodepen } from '@fortawesome/free-brands-svg-icons'
+import { useRefs } from '../../context/RefContext'
 const HowItWorks = () =>
 {
+    const { howItWorksRef } = useRefs()
     return (
-        <div className='how'>
+        <div ref={howItWorksRef} className='how'>
             <div className='how_container'>
                 <div className="how_top">
                     <h2>¿Cómo funciona?</h2>

@@ -37,7 +37,7 @@ const Survey = () =>
                     title: 'Gracias por usar nuestro simulador!',
                     showConfirmButton: true,
                     confirmButtonText: 'Volver al simulador',
-                    timer: 8000
+                    timer: 1500
                 }).then(() =>
                 {
                     navigate('/simulator');
@@ -64,11 +64,11 @@ const Survey = () =>
                     <div className="results">
                         <h4>Resultados</h4>
                         <ul>
-                            <li className='open_sans'>Rendimiento Garantizado: {simulatorData.rendimientoEsperado} kg/ha</li>
+                            <li className='open_sans'>Rendimiento Garantizado: {simulatorData.rendimientoAGarantizar} kg/ha</li>
                             <li className='open_sans'>Cantidad de hectareas: {simulatorData.tamañoLotes}</li>
                             <li className='open_sans'>Rendimiento Esperado: {simulatorData.rendimientoEsperado} kg/ha</li>
                             <li className='open_sans'>Tasa de la Garantía: {(primaResult * 100).toFixed(2)}%</li>
-                            <li className='open_sans'>Prima Total: {simulatorData.rendimientoEsperado} / {primaResult}</li>
+                            <li className='open_sans'>Precio por hectárea: {(simulatorData.rendimientoEsperado * primaResult).toFixed(2)} kg/ha</li>
                         </ul>
                     </div>
                 </div>

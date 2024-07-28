@@ -24,9 +24,9 @@
     .text_container {
       margin: 50px 20px 0 20px;
       max-width: 500px;
-      background-color: $gold;
+      background-color: $dark-blue;
       padding: 25px;
-      color: $dark-blue;
+      color: $white;
       @media (max-width: 768px) {
         width: 90%;
       }
@@ -34,10 +34,10 @@
       h4 {
         font-size: 30px;
         text-align: center;
-        color: $dark-blue;
+        color: $white;
         margin-bottom: 20px;
         padding-bottom: 15px;
-        border-bottom: 1px solid $dark-blue;
+        border-bottom: 1px solid $white;
       }
       ul {
         padding-left: 20px;
