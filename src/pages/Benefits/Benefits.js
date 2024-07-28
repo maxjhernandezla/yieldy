@@ -1,16 +1,21 @@
 import { useRefs } from '../../context/RefContext'
 import './Benefits.scss'
-
+import Aos from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 const Benefits = () =>
 {
     const { benefitsRef } = useRefs()
-
+    useEffect(() =>
+    {
+        Aos.init({ duration: 1000, once: true, easing: 'ease-in-out' });
+    }, [])
     return (
         <div ref={benefitsRef} className='benefits'>
             <div className='benefits_container'>
-                <h2>Beneficios</h2>
+                <h2 data-aos='fade-left'>Beneficios</h2>
                 <div className="cards_container">
-                    <div className="card">
+                    <div className="card" data-aos='fade-up'>
                         <div className="card_title">
                             <h4>Seguridad Financiera</h4>
                         </div>
@@ -21,7 +26,7 @@ const Benefits = () =>
                             </div>
                         </div>
                     </div>
-                    <div className="card">
+                    <div className="card" data-aos='fade-up' data-aos-delay='200'>
                         <div className="card_title">
                             <h4>Costos Eficientes</h4>
                         </div>
@@ -32,8 +37,8 @@ const Benefits = () =>
                             </div>
                         </div>
                     </div>
-                    <div className="card">
-                        <div className="card_title">
+                    <div className="card" data-aos='fade-up' data-aos-delay='400'>
+                        <div className="card_title" >
                             <h4>Tecnología Avanzada</h4>
                         </div>
                         <div className="card_bottom">

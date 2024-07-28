@@ -3,9 +3,16 @@ import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import './Contact.scss'
 import Swal from 'sweetalert2';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 const Contact = () =>
 {
+    useEffect(() =>
+    {
+        Aos.init({ duration: 1000, once: true, easing: 'ease-in-out' });
+    }, [])
     const form = useRef();
 
     const sendEmail = (e) =>
@@ -31,7 +38,7 @@ const Contact = () =>
     const { contactRef } = useRefs()
     return (
         <div ref={contactRef} className='contact'>
-            <div className="contact_container">
+            <div className="contact_container" data-aos='fade-up'>
                 <div className="left">
                     <form ref={form} action="submit" onSubmit={sendEmail}>
                         <input type="text" className="input open_sans" placeholder='Nombre' name='user_name' />

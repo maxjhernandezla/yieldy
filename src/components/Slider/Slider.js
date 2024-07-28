@@ -10,7 +10,9 @@ import s4 from '../../images/img4.png';
 import s5 from '../../images/img5.png';
 import s6 from '../../images/img6.png';
 import s7 from '../../images/img7.png';
-// import s8 from '../../images/img8.png';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 
 const ImagesSlider = ({ images }) =>
@@ -50,17 +52,20 @@ const ImagesSlider = ({ images }) =>
             }
         ]
     };
-
+    useEffect(() =>
+    {
+        Aos.init({ duration: 1000, once: true, easing: 'ease-in-out' });
+    }, [])
     return (
         <div className="slider-container">
             <Slider {...settings}>
-                <img src={s1} alt="1" />
-                <img src={s2} alt="2" />
-                <img src={s3} alt="3" />
-                <img src={s4} alt="4" />
-                <img src={s5} alt="5" />
-                <img src={s6} alt="6" />
-                <img src={s7} alt="7" />
+                <img src={s1} alt="1" data-aos='fade-up' />
+                <img src={s2} alt="2" data-aos='fade-up' data-aos-delay={200} />
+                <img src={s3} alt="3" data-aos='fade-up' data-aos-delay={400} />
+                <img src={s4} alt="4" data-aos='fade-up' data-aos-delay={600} />
+                <img src={s5} alt="5" data-aos='fade-up' />
+                <img src={s6} alt="6" data-aos='fade-up' />
+                <img src={s7} alt="7" data-aos='fade-up' />
                 {/* <img src={s8} alt="8" /> */}
             </Slider>
         </div>
