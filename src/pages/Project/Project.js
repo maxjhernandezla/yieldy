@@ -19,8 +19,8 @@ const Project = () =>
     return (
         <div ref={projectRef} className='project'>
             <div className="project_container">
-                <div className="left" data-aos='fade-right'>
-                    <img src={image} alt="img" />
+                <div className="left">
+                    <img src={image} alt="img" data-aos='fade-right' />
                 </div>
                 <div className="right" data-aos='fade-left'>
                     <h2>Transformando el Riesgo Agrícola con Tecnología Innovadora</h2>

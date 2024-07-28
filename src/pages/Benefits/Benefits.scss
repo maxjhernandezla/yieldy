@@ -11,6 +11,7 @@
     flex-direction: column;
     padding: 15px;
     h2 {
+      overflow: hidden;
       font-size: 30px;
       text-align: center;
       border-bottom: $yellow 3px solid;
