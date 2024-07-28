@@ -9,17 +9,24 @@ export const RefProvider = ({ children }) =>
     const platformRef = useRef(null);
     const benefitsRef = useRef(null);
     const contactRef = useRef(null);
+    const indexRef = useRef(null);
 
     const handleScrollTo = (ref) =>
     {
-        if (ref)
+        if (ref && ref.current)
         {
-            ref.current.scrollIntoView({ behavior: 'smooth' });
+            const navbarHeight = 80; // Altura del navbar en píxeles
+            const elementPosition = ref.current.getBoundingClientRect().top + window.scrollY - navbarHeight;
+
+            window.scrollTo({
+                top: elementPosition,
+                behavior: 'smooth'
+            });
         }
     };
 
     return (
-        <RefContext.Provider value={{ handleScrollTo, projectRef, howItWorksRef, platformRef, benefitsRef, contactRef }}>
+        <RefContext.Provider value={{ indexRef, handleScrollTo, projectRef, howItWorksRef, platformRef, benefitsRef, contactRef }}>
             {children}
         </RefContext.Provider>
     );

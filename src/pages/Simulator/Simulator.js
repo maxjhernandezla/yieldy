@@ -18,8 +18,6 @@ const Simulator = ({ refs, handleScrollTo }) =>
         rendimientoIndiferencia: ''
     });
 
-    console.log(refs);
-
     const handleSubmit = (e) =>
     {
         e.preventDefault();

@@ -12,7 +12,7 @@ const ResponsiveNavbar = () =>
     const [isScrolled, setIsScrolled] = useState(false);
     const menuRef = useRef(null);
     const navigate = useNavigate();
-    const { projectRef, howItWorksRef, contactRef, benefitsRef, platformRef, handleScrollTo } = useRefs();
+    const { indexRef, projectRef, howItWorksRef, contactRef, benefitsRef, platformRef, handleScrollTo } = useRefs();
 
     const handleMenuToggle = () =>
     {
@@ -54,7 +54,8 @@ const ResponsiveNavbar = () =>
 
     return (
         <nav className={isScrolled ? 'scrolled' : ''}>
-            <Link to='/'>
+
+            <Link to='/' onClick={() => handleLinkClick('/', indexRef)}>
                 <img src={bigLogo} alt="logo" className='logo' />
             </Link>
             <div className="menu" onClick={handleMenuToggle}>
@@ -101,7 +102,7 @@ const ResponsiveNavbar = () =>
                     <Link
                         to='/simulator'
                         className='open_sans'
-                        onClick={() => handleLinkClick('/simulator', null)}
+                        onClick={() => handleLinkClick('/simulator', indexRef)}
                     >
                         Simulador
                     </Link>
@@ -116,6 +117,7 @@ const ResponsiveNavbar = () =>
                     </Link>
                 </li>
             </ul>
+
         </nav>
     );
 };

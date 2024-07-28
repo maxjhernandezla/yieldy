@@ -64,9 +64,9 @@ const Survey = () =>
                     <div className="results">
                         <h4>Resultados</h4>
                         <ul>
-                            <li className='open_sans'>Rendimiento Garantizado: {simulatorData.rendimientoAGarantizar} kg/ha</li>
-                            <li className='open_sans'>Cantidad de hectareas: {simulatorData.tamañoLotes}</li>
-                            <li className='open_sans'>Rendimiento Esperado: {simulatorData.rendimientoEsperado} kg/ha</li>
+                            <li className='open_sans'>Rendimiento Garantizado: {Number(simulatorData.rendimientoAGarantizar).toLocaleString('es-ES')} kg/ha</li>
+                            <li className='open_sans'>Cantidad de hectareas: {Number(simulatorData.tamañoLotes).toLocaleString('es-ES')}</li>
+                            <li className='open_sans'>Rendimiento Esperado: {Number(simulatorData.rendimientoEsperado).toLocaleString('es-ES')} kg/ha</li>
                             <li className='open_sans'>Tasa de la Garantía: {(primaResult * 100).toFixed(2)}%</li>
                             <li className='open_sans'>Precio por hectárea: {(simulatorData.rendimientoEsperado * primaResult).toFixed(2)} kg/ha</li>
                         </ul>
@@ -108,7 +108,7 @@ const Survey = () =>
                                         />
                                     )
                                 }
-                                {errors.otro && <span className="error open_sans">{errors.otroMotivo}</span>}
+                                {errors.otroMotivo && <span className="error open_sans">{errors.otroMotivo}</span>}
                             </div>
                         )
                     }

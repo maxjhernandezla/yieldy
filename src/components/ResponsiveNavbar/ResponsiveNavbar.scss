@@ -15,6 +15,9 @@ nav {
   transition: background-color 0.3s ease;
   &.scrolled {
     background-color: $navbar-degrade;
+    .menu {
+      background-color: transparent;
+    }
   }
   .logo {
     height: 60px;
@@ -78,7 +81,13 @@ nav {
 @media (max-width: 1050px) {
   nav {
     padding: 0.5rem 1rem;
-
+    &.scrolled {
+      ul {
+        &.open {
+          background-color: $navbar-degrade;
+        }
+      }
+    }
     .menu {
       display: flex;
     }
@@ -121,8 +130,8 @@ nav {
     }
 
     .menu {
-      width: 2rem;
-      height: 1.5rem;
+      width: 2.5rem;
+      height: 2rem;
     }
 
     ul {
