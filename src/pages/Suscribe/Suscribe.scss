@@ -1,11 +1,11 @@
 @import '../../App.scss';
-
 .suscribe {
   width: 100%;
   background-image: url('../../images/bg.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: top;
+  background-position: center;
+  background-attachment: fixed;
   display: flex;
   align-items: center;
   .suscribe_cover {

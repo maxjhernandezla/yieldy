@@ -1,11 +1,9 @@
 @import '../../App.scss';
 .header {
   width: 100%;
-  height: auto;
   background-image: url('../../images/bg.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  // background-size: 120%;
   background-position: center;
   background-attachment: fixed;
   display: flex;
@@ -90,6 +88,7 @@
 
 @media (max-width: 768px) {
   .header {
+    background-attachment: fixed;
     .header_container {
       .header_text_container {
         .header_text {
