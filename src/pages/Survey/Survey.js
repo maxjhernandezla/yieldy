@@ -14,7 +14,6 @@ const Survey = () =>
     const [otroMotivo, setOtroMotivo] = useState('');
 
     const navigate = useNavigate();
-
     const handleSubmit = async (e) =>
     {
         e.preventDefault();
@@ -118,7 +117,7 @@ const Survey = () =>
                         {errors.comentarios && <span className="error open_sans">{errors.comentarios}</span>}
                     </div>
                     <button type="submit" className='open_sans'>Enviar Encuesta</button>
-                    {/* <button type="button" onClick={() => navigate('/simulator')}>Volver al Simulador</button> */}
+                    <button type="button" className='open_sans' onClick={() => navigate('/simulator')}>Volver al Simulador</button>
                 </form>
             </div>
         </div>

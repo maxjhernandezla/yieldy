@@ -1,6 +1,8 @@
 import React, { createContext, useState, useContext } from 'react';
-import { postToFirebase } from '../helpers/postToFirebase';
 import prima from '../helpers/calcPrima';
+import { post } from '../helpers/post';
+import { v4 as uuidv4 } from 'uuid';
+import { update } from '../helpers/update';
 
 const ResultContext = createContext();
 
@@ -17,27 +19,30 @@ export const ResultProvider = ({ children }) =>
     const [surveyData, setSurveyData] = useState({ adquiere: '', comentarios: '', porque: '', otroMotivo: '' });
     const [dbResult, setDbResult] = useState(null);
     const [primaResult, setPrimaResult] = useState(null);
+    const [sid, setSid] = useState(null);
 
-    const generateSimulatorData = (cultivo, tamañoLotes, rendimientoEsperado, rendimientoAGarantizar) =>
+    const generateSimulatorData = async (cultivo, tamañoLotes, rendimientoEsperado, rendimientoAGarantizar) =>
     {
         setSimulatorData({ cultivo, tamañoLotes, rendimientoEsperado, rendimientoAGarantizar });
         setSimulatorDone(true);
         const primaResult = prima(rendimientoEsperado, rendimientoAGarantizar);
         setPrimaResult(primaResult);
+        const sid = uuidv4();
+        setSid(sid);
+        await post(cultivo, tamañoLotes, rendimientoEsperado, rendimientoAGarantizar, sid, primaResult)
     };
 
     const generateSurveyData = async (adquiere, comentarios, porque, otroMotivo) =>
     {
         setSurveyData({ adquiere, comentarios, porque, otroMotivo });
-        await postToDB(adquiere, comentarios, porque, otroMotivo);
+        await updateData(sid, adquiere, comentarios, porque, otroMotivo);
     };
 
-    const postToDB = async (adquiere, comentarios, porque, otroMotivo) =>
+    const updateData = async (sid, adquiere, comentarios, porque, otroMotivo) =>
     {
-        const { cultivo, tamañoLotes, rendimientoEsperado, rendimientoAGarantizar } = simulatorData;
         try
         {
-            const result = await postToFirebase(cultivo, tamañoLotes, rendimientoEsperado, rendimientoAGarantizar, adquiere, comentarios, primaResult, porque, otroMotivo);
+            const result = await update(sid, adquiere, comentarios, porque, otroMotivo);
             setTimeout(() =>
             {
                 restartData()
@@ -71,7 +76,7 @@ export const ResultProvider = ({ children }) =>
     };
 
     return (
-        <ResultContext.Provider value={{ simulatorData, generateSimulatorData, surveyData, generateSurveyData, dbResult, simulatorDone, restartData, primaResult }}>
+        <ResultContext.Provider value={{ simulatorData, generateSimulatorData, surveyData, generateSurveyData, dbResult, simulatorDone, restartData, primaResult, sid }}>
             {children}
         </ResultContext.Provider>
     );

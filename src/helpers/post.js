@@ -1,33 +1,23 @@
 import { set, ref } from 'firebase/database';
 import { db } from '../firebase';
-import { v4 as uuidv4 } from 'uuid';
 
-const postToFirebase = (
+const post = (
     cultivo,
     tamañoLotes,
     rendimientoEsperado,
     rendimientoAGarantizar,
-    adquiere,
-    comentarios,
-    primaResult,
-    porque,
-    otroMotivo
+    sid,
+    primaResult
 ) =>
 {
-    const id = uuidv4();
     const date = new Date().toISOString();
-    return set(ref(db, `/${id}`), {
-        id,
+    return set(ref(db, `/${sid}`), {
+        sid,
         cultivo,
         tamañoLotes,
         rendimientoEsperado,
         rendimientoAGarantizar,
-        adquiere,
-        comentarios,
-        date,
-        primaResult,
-        porque,
-        otroMotivo,
+        primaResult, date
     })
         .then(() =>
         {
@@ -39,4 +29,4 @@ const postToFirebase = (
         });
 };
 
-export { postToFirebase };
+export { post };
