@@ -54,69 +54,71 @@ const ResponsiveNavbar = () =>
 
     return (
         <nav className={isScrolled ? 'scrolled' : ''}>
+            <div className="nav_container">
 
-            <Link to='/' onClick={() => handleLinkClick('/', indexRef)}>
-                <img src={bigLogo} alt="logo" className='logo' />
-            </Link>
-            <div className="menu" onClick={handleMenuToggle}>
-                <FontAwesomeIcon icon={faBars} />
+                <Link to='/' onClick={() => handleLinkClick('/', indexRef)}>
+                    <img src={bigLogo} alt="logo" className='logo' />
+                </Link>
+                <div className="menu" onClick={handleMenuToggle}>
+                    <FontAwesomeIcon icon={faBars} />
+                </div>
+                <ul ref={menuRef} className={menuOpen ? "open open_sans" : ""}>
+                    <li>
+                        <Link
+                            to="/"
+                            className='open_sans'
+                            onClick={() => handleLinkClick('/', projectRef)}
+                        >
+                            Proyecto
+                        </Link>
+                    </li>
+                    <li>
+                        <Link
+                            to="/"
+                            className='open_sans'
+                            onClick={() => handleLinkClick('/', howItWorksRef)}
+                        >
+                            ¿Cómo funciona?
+                        </Link>
+                    </li>
+                    <li>
+                        <Link
+                            to="/"
+                            className='open_sans'
+                            onClick={() => handleLinkClick('/', platformRef)}
+                        >
+                            Plataforma
+                        </Link>
+                    </li>
+                    <li>
+                        <Link
+                            to="/"
+                            className='open_sans'
+                            onClick={() => handleLinkClick('/', benefitsRef)}
+                        >
+                            Beneficios
+                        </Link>
+                    </li>
+                    <li>
+                        <Link
+                            to='/simulator'
+                            className='open_sans'
+                            onClick={() => handleLinkClick('/simulator', indexRef)}
+                        >
+                            Simulador
+                        </Link>
+                    </li>
+                    <li>
+                        <Link
+                            to="/"
+                            className='open_sans'
+                            onClick={() => handleLinkClick('/', contactRef)}
+                        >
+                            Contacto
+                        </Link>
+                    </li>
+                </ul>
             </div>
-            <ul ref={menuRef} className={menuOpen ? "open open_sans" : ""}>
-                <li>
-                    <Link
-                        to="/"
-                        className='open_sans'
-                        onClick={() => handleLinkClick('/', projectRef)}
-                    >
-                        Proyecto
-                    </Link>
-                </li>
-                <li>
-                    <Link
-                        to="/"
-                        className='open_sans'
-                        onClick={() => handleLinkClick('/', howItWorksRef)}
-                    >
-                        ¿Cómo funciona?
-                    </Link>
-                </li>
-                <li>
-                    <Link
-                        to="/"
-                        className='open_sans'
-                        onClick={() => handleLinkClick('/', platformRef)}
-                    >
-                        Plataforma
-                    </Link>
-                </li>
-                <li>
-                    <Link
-                        to="/"
-                        className='open_sans'
-                        onClick={() => handleLinkClick('/', benefitsRef)}
-                    >
-                        Beneficios
-                    </Link>
-                </li>
-                <li>
-                    <Link
-                        to='/simulator'
-                        className='open_sans'
-                        onClick={() => handleLinkClick('/simulator', indexRef)}
-                    >
-                        Simulador
-                    </Link>
-                </li>
-                <li>
-                    <Link
-                        to="/"
-                        className='open_sans'
-                        onClick={() => handleLinkClick('/', contactRef)}
-                    >
-                        Contacto
-                    </Link>
-                </li>
-            </ul>
 
         </nav>
     );
